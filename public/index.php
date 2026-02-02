@@ -1,18 +1,7 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Document</title>
-</head>
-<body>
+<?php
 
+require dirname(__DIR__) . "/vendor/autoload.php";
 
-<h1> Voici ma page</h1>
+use App\Core\App;
 
-
-<h2>voici mon h2</h2>
-
-
-</body>
-</html>
+App::run();
