@@ -1,5 +1,5 @@
 {
-    "name": "dministrateur/mon-site-php",
+    "name": "YT-Issam/mon-site-php",
     "autoload": {
         "psr-4": {
             "App\\": "src/"

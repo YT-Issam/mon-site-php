@@ -3,31 +3,18 @@
 namespace App\Controller;
 
 use App\Core\Controller;
+use App\Repository\UserRepository;
 
 class HomeController extends Controller
 {
-    public function index() {
-        $this->render('home', [
-            'title' => 'HOME PAGE',
-            'description' => 'Classical home page',
-            'age' => 54
-        ]);
-    }
-
-    public function contact(): void
+    public function index(): void
     {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $this->render('contact', [
-                'title' => 'CONTACT PAGE',
-                'email' => $_POST['email'],
-                'subject' => $_POST['subject'],
-                'message' => $_POST['message']
-            ]);
-            return;
-        }
+        $userRepository = new UserRepository();
+        $users = $userRepository->findAll();
 
-        $this->render('contact', [
-            'title' => 'CONTACT PAGE'
+        $this->render('home', [
+            'title' => 'Page Home',
+            'users' => $users
         ]);
     }
 }
