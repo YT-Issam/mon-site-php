@@ -1,26 +1,16 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Document</title>
-</head>
-<body>
+<h1><?= $title ?></h1>
 
-<h1><?= $title ?> </h1>
-
-<form action="" method="post" novalidate>
+<form action="" method="post">
 
     <div>
-        <label for="email">E-mail</label>
-        <input type="email" id="email" name="email" placeholder="Saisir e-mail">
+        <label for="email">Email</label>
+        <input id="email" type="email" name="email" placeholder="Saissisez votre mail" required>
     </div>
 
     <div>
         <label for="subject">Subject</label>
-
-        <select name="subject" id="subject">
-            <option value="refund">Rembourcement</option>
+        <select name="subject" id="subject" required>
+            <option value="refund">Remboursement</option>
             <option value="help">Aide</option>
             <option value="problem">Problème</option>
         </select>
@@ -28,17 +18,9 @@
 
     <div>
         <label for="message">Message</label>
-        <textarea name="message" id="message" cols="30" rows="10"></textarea>
+        <textarea name="message" id="message" cols="30" rows="10" style="resize: none;" required></textarea>
     </div>
 
     <button type="submit">Soumettre</button>
+
 </form>
-
-<!-- Ici je veux afficher les données de mon form -->
-<p><?= isset($email) ? $email : '' ?></p>
-<p><?= isset($subject) ? $subject : '' ?></p>
-<p><?= isset($message) ? $message : '' ?></p>
-
-</body>
-</html>
- 
